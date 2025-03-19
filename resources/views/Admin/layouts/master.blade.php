@@ -1,0 +1,5 @@
+    @include('Admin.layouts.header')
+    @include('Admin.layouts.navbar')
+    @yield('content')
+    @include('Admin.layouts.footer')
+    @include('Admin.layouts.script')

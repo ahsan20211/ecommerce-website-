@@ -1,0 +1,5 @@
+@include('frontend.layout.header')
+@include('frontend.layout.navbar')
+@yield('content')
+@include('frontend.layout.footer')
+@include('frontend.layout.script')
