@@ -52,7 +52,7 @@ class ClientController extends Controller
         }
         return redirect()->back()->with('error', 'Email or password incorrect');
     }
-git
+
     public function logout(Request $request)
     {
         Auth::guard('client')->logout();
