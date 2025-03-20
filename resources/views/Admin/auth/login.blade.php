@@ -1,7 +1,7 @@
 @extends('frontend.layout.master')
 @section('content')
 
-    <form action="/login/store/" method="POST" class="register-section">
+    <form action="/admin/login/store/" method="POST" class="register-section">
         @csrf
         <div class="container">
             <h1>login Form</h1>

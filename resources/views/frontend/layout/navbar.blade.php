@@ -30,6 +30,10 @@
 
             @auth('client')
                 <li>Welcome, {{ Auth::guard('client')->user()->name }}</li>
+                <form action="{{ route('logout') }}" method="POST">
+                    @csrf
+                    <button type="submit" class="btn btn-danger">Logout</button>
+                </form>
             @else
                 <li><a href="/register">Register</a></li>
                 <li><a href="/login">Login</a></li>

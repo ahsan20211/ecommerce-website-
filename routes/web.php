@@ -32,8 +32,10 @@ Route::group(['middleware' => 'guest'], function () {
 
     Route::get('/register/', [App\Http\Controllers\Client\ClientController::class, 'register']);
     Route::post('/register/store/', [App\Http\Controllers\Client\ClientController::class, 'store']);
-    Route::get('/login/', [App\Http\Controllers\Client\ClientController::class, 'login'])->name('login');
+    Route::get('/login', [App\Http\Controllers\Client\ClientController::class, 'login'])->name('login');
     Route::post('/login/store/', [App\Http\Controllers\Client\ClientController::class, 'loginStore']);
+    Route::post('/logout', [App\Http\Controllers\Client\ClientController::class, 'logout'])->name('logout');
+
 
 });
 
@@ -59,11 +61,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:admin']], function () 
 
 });
 
-Route::group(['middleware' => 'guest'] , function (){
-    
+Route::group([ 'prefix' => 'admin' ,'middleware' => 'guest'] , function (){
+
     Route::get('/register/', [App\Http\Controllers\Admin\AdminController::class, 'register']);
     Route::post('/register/store/', [App\Http\Controllers\Admin\AdminController::class, 'store']);
-    Route::get('/login/', [App\Http\Controllers\Admin\AdminController::class, 'login'])->name('login');
+    Route::get('/login', [App\Http\Controllers\Admin\AdminController::class, 'login']);
     Route::post('/login/store/', [App\Http\Controllers\Admin\AdminController::class, 'loginStore']);
 
 });

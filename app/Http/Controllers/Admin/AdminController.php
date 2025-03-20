@@ -21,7 +21,6 @@ class AdminController extends Controller
 
 
     public function store(Request $request)
-
     {
         $siteusers = new Admin();
         $siteusers->name = $request->name;
@@ -29,7 +28,7 @@ class AdminController extends Controller
         $siteusers->password = md5($request->password);
         $siteusers->number = $request->number;
         $siteusers->save();
-        return redirect('/admin/product');
+        return redirect('/admin/login');
     }
 
     public function login(Request $request)
@@ -46,7 +45,7 @@ class AdminController extends Controller
             ->first();
         if ($user) {
             Auth::guard('admin')->login($user);
-            return redirect('/admin/product');git init
+            return redirect('/admin/product');
         }
         return redirect()->back()->with('error', 'Email or password incorrect');
     }
