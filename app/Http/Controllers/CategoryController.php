@@ -28,6 +28,7 @@ class CategoryController extends Controller
         $request->validate([
 
             'title' => 'required'
+
         ]);
 
         $category = new Category();
@@ -45,9 +46,9 @@ class CategoryController extends Controller
 
     public function edit(string $id)
     {
-            $title = 'Edit Category';
-            $category = Category::find($id);
-            return view('Admin.Category.form',compact('title' , 'category'));
+        $title = 'Edit Category';
+        $category = Category::find($id);
+        return view('Admin.Category.form', compact('title', 'category'));
 //        return 'edit';
     }
 

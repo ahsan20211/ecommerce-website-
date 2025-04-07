@@ -14,8 +14,11 @@
                     <input type="password" placeholder="password" name="password" class="form-control mt-2">
                 </div>
 
-                <div class="col-lg-6">
+                <div class="col-lg-2">
                     <button type="submit" class="btn btn-primary mt-3">submit</button>
+                </div>
+                <div class="col-lg-6">
+                    <a href="/auth/google" class="btn btn-primary mt-3">Continue With Google</a>
                 </div>
             </div>
         </div>

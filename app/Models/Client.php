@@ -8,5 +8,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Client extends Authenticatable
 {
     protected $table = 'client_user';
+    protected $fillable = ['name', 'email' , 'google_id'];
     use HasFactory;
 }

@@ -4,7 +4,7 @@
     <a href="#" class="logo">Logo</a>
     <div class="nav_items">
         <a href="/admin/product" class="active">Product</a>
-        <a href="#">Orders</a>
+        <a href="/admin/order">Orders</a>
         <a href="/admin/brand">Brand</a>
         <a href="/admin/category">Categories</a>
     </div>
@@ -48,9 +48,6 @@
 
         #MenuToggle {
             display: none;
-            /* position: absolute;
-         top: 30px;
-         left: 350px; */
         }
 
 

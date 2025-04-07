@@ -12,7 +12,7 @@ class BrandController extends Controller
     public function index()
     {
         $brandData = Brand::all();
-        return view('Admin.Brand.index',compact('brandData'));
+        return view('Admin.Brand.index', compact('brandData'));
     }
 
 
@@ -30,13 +30,15 @@ class BrandController extends Controller
         ]);
         $brand = new Brand();
         $brand->title = $request->title;
-        $brand ->save();
+        $brand->save();
         return redirect('admin/brand');
+
     }
 
 
     public function show(string $id)
     {
+
 
     }
 
@@ -45,12 +47,12 @@ class BrandController extends Controller
     {
         $title = 'Edit your Brand';
         $edit = Brand::find($id);
-        return view('Admin.Brand.form',compact('edit','title'));
+        return view('Admin.Brand.form', compact('edit', 'title'));
 
     }
 
-
     public function update(Request $request, string $id)
+
     {
         $request->validate([
 
@@ -58,16 +60,16 @@ class BrandController extends Controller
         ]);
         $brand = Brand::find($id);
         $brand->title = $request->title;
-        $brand ->save();
-        return redirect('admin/brand');    }
+        $brand->save();
+        return redirect('/admin/brand');
+    }
 
     public function delete(string $id)
 
     {
         $delete = Brand::find($id);
-        $delete ->delete();
+        $delete->delete();
         return redirect('admin/brand');
-
 
     }
 }

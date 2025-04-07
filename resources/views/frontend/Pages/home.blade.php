@@ -10,8 +10,7 @@
                 <h2>FALL - WINTER<br>Collection 2023</h2>
                 <div class="home_label ">
                     <p>A specialist label creating luxury essentials. Ethically crafted<br>with an unwavering commitment
-                        to
-                        exceptional quality.</p>
+                        to exceptional quality.</p>
                 </div>
                 <button><a href="#sellers">SHOP NOW</a><i class='bx bx-right-arrow-alt'></i></button>
                 <div class="home_social_icons">
@@ -71,6 +70,15 @@
                         </div>
                     </a>
                 @endforeach
+
+                {{--                    <div class="section-dummy container">--}}
+
+                {{--                        <h2>dummy</h2>--}}
+                {{--                        @foreach($dummyProduct as $dummy)--}}
+                {{--                            <h5 class="text-danger">{{ $dummy['name'] }}</h5>--}}
+                {{--                        @endforeach--}}
+                {{--                    </div>--}}
+
             </div>
         </div>
     </section>
@@ -152,3 +160,4 @@
         </div>
     </section>
 @endsection
+

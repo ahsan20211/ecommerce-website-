@@ -16,7 +16,6 @@ class ClientController extends Controller
 
     public function register()
     {
-
         return view('frontend.Pages.register');
     }
 
@@ -31,10 +30,10 @@ class ClientController extends Controller
         $siteusers->password = md5($request->password);
         $siteusers->number = $request->number;
         $siteusers->save();
-        return redirect('/home');
+        return redirect('/');
     }
 
-    public function login(Request $request)
+    public function login()
 
     {
         return view('frontend.Pages.login');
@@ -48,7 +47,7 @@ class ClientController extends Controller
             ->first();
         if ($user) {
             Auth::guard('client')->login($user);
-            return redirect('/home');
+            return redirect('/');
         }
         return redirect()->back()->with('error', 'Email or password incorrect');
     }
@@ -56,7 +55,7 @@ class ClientController extends Controller
     public function logout(Request $request)
     {
         Auth::guard('client')->logout();
-        return redirect('/home')->with('success', 'Logged out successfully');
+        return redirect('/')->with('success', 'Logged out successfully');
     }
 
 
